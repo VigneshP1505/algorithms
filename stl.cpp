@@ -34,6 +34,44 @@ void vectors(){
     vector<int> v2;
     v2.push_back(10);
     v2.push_back(20);
+    vector<int>::iterator itr;
+    for(itr=v2.begin();itr!=v2.end();itr++){
+        cout << *(itr) << std::endl;
+    }
+    vector<int>::reverse_iterator itr2;
+    for(itr2=v2.rbegin();itr2!=v2.rend();itr2++){
+        cout << *(itr2) << std::endl;
+    }
+    for(auto itr=v2.begin();itr!=v2.end();itr++){
+        cout << *(itr) << std::endl;
+    }
+
+    //insert
+    cout << "insert\n";
+    v2.insert(v2.begin(),100);
+    v2.insert(v2.begin(), 2, 50);
+    for(auto itr=v2.begin();itr!=v2.end();itr++){
+        cout << *(itr) << endl;
+    }
+
+    //erase
+    v2.erase(v2.begin()+1);
+    cout <<"erase";
+    for(auto itr=v2.begin();itr<=v2.end();itr++){
+        cout << *(itr) << endl;
+    }
+
+    cout << "practice" << endl;
+    vector<int> copied(2,25);
+    vector<int> vector(2,50); //{50,50}
+    vector.push_back(10); //{50,50,10}
+    vector.insert(vector.begin()+1, 300); //{50,300,50,10}
+    vector.insert(vector.begin()+1, 2, 100); //{50,100,100,300,50,10}
+    vector.insert(vector.begin()+1, copied.begin(), copied.end()); //{50,25,25,100,100,300,50,10}
+    for(auto itr=vector.begin();itr!=vector.end();itr++){
+        cout << *(itr) << endl;
+    }
+
     cout << std::endl;
 }
 

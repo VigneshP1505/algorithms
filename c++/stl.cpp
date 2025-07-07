@@ -145,15 +145,32 @@ void priorityQueues(){
         cout << minPq.top() << endl;
         minPq.pop();
     }
+    cout << endl;
 }
 
+//sorted and unique
+//time complexity: all operations O(log N)
 void sets(){
+    cout << "sets" << endl;
     set<int> st;
     st.insert(10);
     st.insert(10);
     st.emplace(2);
-    auto it = st.find(10);
-    cout << *(it);
+    auto it = st.begin();
+    auto itr = st.find(12);
+    while (it != st.end()) {
+        cout << *it << endl;
+        ++it;
+    }
+    cout << "Finding 12:" << *(itr) << endl;
+    cout << st.count(1);
+    cout << endl;
+}
+
+//sorted and not unique
+void multisets(){
+    multiset<int> ms;
+    ms.insert(1);
 }
 
 int main(){

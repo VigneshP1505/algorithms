@@ -7,6 +7,57 @@
 
 using namespace std;
 
+class STL{
+    public:
+        void pairs(){
+            pair<int,int> p ={1,2};
+            pair<int,pair<int,int>> dp = {1, {4,5}};
+            cout << p.first << p.second << endl;
+        }
+    public:
+        void vectors(){
+            vector<int> v;
+            v.push_back(10);
+            v.push_back(12);
+            v.push_back(13);
+            cout << "vector size:" << v.size() << endl;
+            cout << "max size of vector:" << v.max_size() << endl;
+            //iterators
+            vector<int>::iterator i = v.begin();
+            for(;i!=v.end();++i){
+                cout << (*i) << endl;
+            }
+
+            cout << "reverse iterator" << endl;
+
+            vector<int>::reverse_iterator rit = v.rbegin();
+            for(;rit!=v.rend();++rit){
+                cout << (*rit) << endl;
+            }
+
+            cout << "reverse iterator two" << endl;
+
+            vector<int>::reverse_iterator itr=v.rend();
+            for(itr-=1;itr!=v.rbegin()-1;--itr){
+                cout << (*itr) << endl;
+            }
+
+            v.insert(v.begin(),100);
+            v.insert(v.begin(), 2, 25);
+
+            vector<int>::iterator iterator=v.begin();
+            for(;iterator!=v.end();++iterator) {
+                cout << "element:" << (*iterator) << endl;
+            }
+
+        }
+
+    public:
+        void lists(){
+
+        }
+};
+
 void pairs(){
     pair<int,int> p ={1,2};
     pair<int, pair<int,int>> dp={1,{1,3}};
@@ -14,6 +65,25 @@ void pairs(){
     cout << p.first << p.second;
     cout << dp.first << dp.second.first;
     cout << std::endl;
+}
+
+void vectorsOne(){
+    vector<int> v;
+    v.push_back(10);
+    v.emplace_back(15);
+    v.emplace_back(12);
+    cout << "vector size:" << v.size() << endl;
+    cout << "max size of vector:" << v.max_size() <<endl;
+
+    vector<int>::iterator it=v.begin();
+    for(it=v.begin();it!=v.end();it++){
+        cout << *(it) << std::endl;
+    }
+
+    vector<int>::reverse_iterator ritr=v.rend();
+    for(ritr=v.rbegin();ritr!=v.rend();++ritr){
+        cout << *(ritr) << std::endl;
+    }
 }
 
 void vectors(){
@@ -174,12 +244,15 @@ void multisets(){
 }
 
 int main(){
-    pairs();
-    vectors();
-    lists();
-    deques();
-    queues();
-    priorityQueues();
-    sets();
+    // pairs();
+    // vectors();
+    // lists();
+    // deques();
+    // queues();
+    // priorityQueues();
+    // sets();
+    // vectorsOne();
+    STL o;
+    o.vectors();
     return 0;
 }

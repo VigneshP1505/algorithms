@@ -34,10 +34,12 @@ class STL{
             for(;rit!=v.rend();++rit){
                 cout << (*rit) << endl;
             }
-
             cout << "reverse iterator two" << endl;
 
             vector<int>::reverse_iterator itr=v.rend();
+
+            vector<int>::reverse_iterator itr=v.rend();
+
             for(itr-=1;itr!=v.rbegin()-1;--itr){
                 cout << (*itr) << endl;
             }
@@ -52,9 +54,24 @@ class STL{
 
         }
 
+    //doubly linked list
     public:
         void lists(){
+            list<int> ls;
+            ls.push_back(10);
+            ls.push_back(20);
+            ls.push_back(30);
+            for(auto i=ls.begin();i!=ls.end();++i){
+                cout << (*i) << endl;
+            }
 
+            for(auto i=ls.rbegin();i!=ls.rend();++i){
+                cout << (*i) << endl;
+            }
+
+            for(auto i=ls.end();i!=ls.begin();--i){
+                cout << (*i) << endl;
+            }
         }
 };
 
@@ -254,5 +271,6 @@ int main(){
     // vectorsOne();
     STL o;
     o.vectors();
+    o.lists();
     return 0;
 }

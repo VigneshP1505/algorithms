@@ -12,6 +12,7 @@ class Solution {
             }
             return i+1;
         }
+
     public:
         void vectors(){
             vector<int> v;
@@ -30,7 +31,7 @@ class Solution {
 
 int main(){
     Solution o;
-    vector<int> nums={1,2,3};
+    vector<int> nums={1,1,2,3};
     o.removeDuplicates(nums);
     o.vectors();
 }

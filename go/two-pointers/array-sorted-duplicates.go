@@ -1,3 +1,5 @@
+package twopointers
+
 func removeDuplicates(nums []int) int {
 	_p1 := 0
 	_p2 := 1

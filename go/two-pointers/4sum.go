@@ -1,5 +1,9 @@
-import "math"
-import "sort"
+package twopointers
+
+import (
+	"math"
+	"sort"
+)
 
 func _4Sum(nums []int, target int) [][]int {
 	left := 0
@@ -10,7 +14,7 @@ func _4Sum(nums []int, target int) [][]int {
 		_p1, _p2 := left+1, right-1
 		sum := math.MinInt64
 		for _p1 < _p2 {
-			sum := nums[left] + nums[right] + nums[_p1] + nums[_p2]
+			sum = nums[left] + nums[right] + nums[_p1] + nums[_p2]
 			if sum == target {
 				res = append(res, []int{nums[left], nums[right], nums[_p1], nums[_p2]})
 			} else if sum < target {

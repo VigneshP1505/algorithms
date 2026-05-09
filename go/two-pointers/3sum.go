@@ -1,9 +1,11 @@
+package twopointers
+
 import "sort"
 
 func threeSum(nums []int) [][]int {
 	sort.Ints(nums)
 	res := [][]int{}
-	for i = 0; i < len(nums); i++ {
+	for i := 0; i < len(nums); i++ {
 		left, right := i+1, len(nums)-1
 		for left < right {
 			sum := nums[i] + nums[left] + nums[right]
@@ -11,7 +13,7 @@ func threeSum(nums []int) [][]int {
 				res = append(res, []int{nums[i], nums[left], nums[right]})
 				left++
 				right--
-				for left < right && nums[left] == num[left-1] {
+				for left < right && nums[left] == nums[left-1] {
 					continue
 				}
 				for left < right && nums[right] == nums[right+1] {

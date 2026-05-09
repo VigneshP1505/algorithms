@@ -1,3 +1,5 @@
+package twopointers
+
 func _firstOccurrence(val string, needle string) int {
 	_p1 := 0
 	_p2 := 0
@@ -22,4 +24,4 @@ func _firstOccurrence(val string, needle string) int {
 		return idx
 	}
 	return -1
-} 
+}

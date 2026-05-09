@@ -1,3 +1,5 @@
+package twopointers
+
 func _removeElement(nums []int, val int) int {
 	_p1 := 0
 	_p2 := 0

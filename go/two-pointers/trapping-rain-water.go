@@ -1,6 +1,8 @@
-func _trap(nums []int) int {
+package twopointers
+
+func _trap(height []int) int {
 	_p1 := 0
-	_p2 := len(nums) - 1
+	_p2 := len(height) - 1
 	leftMax := 0
 	rightMax := 0
 	totalWater := 0

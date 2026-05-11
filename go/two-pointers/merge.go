@@ -1,4 +1,6 @@
-func _merge(nums1 []int, nums2 []int) []int {
+package twopointers
+
+func _merge(nums1 []int, m int, nums2 []int, n int) []int {
 	p1, p2, p3 := 0, 0, 0
 
 	res := make([]int, m+n)
@@ -29,4 +31,5 @@ func _merge(nums1 []int, nums2 []int) []int {
 	for i := 0; i < m+n; i++ {
 		nums1[i] = res[i]
 	}
+	return nums1
 }

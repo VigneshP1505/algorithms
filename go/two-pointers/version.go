@@ -1,3 +1,5 @@
+package twopointers
+
 func _version(s1 string, s2 string) int {
 	i, j := 0, 0
 	m, n := len(s1), len(s2)

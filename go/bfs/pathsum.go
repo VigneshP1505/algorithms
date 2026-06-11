@@ -83,6 +83,43 @@ func _targetSum(root *Node, target int, sum int) bool {
 	return _targetSum(root.left, target, sum) || _targetSum(root.right, target, sum)
 }
 
+func _invertTree(root *Node) {
+	if root == nil {
+		return
+	}
+	_invertTree(root.left)
+	_invertTree(root.right)
+
+	temp := root.left
+	root.left = root.right
+	root.right = temp
+}
+
+func mirrorTree(root *Node) *Node {
+	if root == nil {
+		return nil
+	}
+	_invertTree(root)
+	return root
+}
+
+func _isMirror(n1 *Node, n2 *Node) bool {
+	if n1 == nil && n2 == nil {
+		return true
+	}
+	if n1 == nil || n2 == nil {
+		return false
+	}
+	return n1.data == n2.data && _isMirror(n1.left, n2.right) && _isMirror(n1.right, n2.left)
+}
+
+func isSymmetric(root *Node) bool {
+	if root == nil {
+		return true
+	}
+	return _isMirror(root.left, root.right)
+}
+
 func main() {
 	graph := map[int][]int{
 		0: {1, 2},

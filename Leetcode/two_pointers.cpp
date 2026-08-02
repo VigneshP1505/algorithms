@@ -108,3 +108,23 @@ void mergeSortedArrayWithoutExtraSpace(vector<int>& nums1,int m, vector<int>& nu
         end_idx--;
     }
 }
+
+bool validPalindrome(string s) {
+    string temp;
+    for(char c : s) {
+        if(isalnum(c)) {
+            temp += tolower(c);
+        }
+    }
+
+    int l = 0;
+    int r = static_cast<int>(temp.size()) - 1;
+
+    while(l < r) {
+        if(temp[l] != temp[r])
+            return false;
+        l++;
+        r--;
+    }
+    return true;
+}

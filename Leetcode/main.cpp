@@ -76,7 +76,6 @@ bool palindromeNumber(int x){
 
 
 int main() {
-    vector<int> nums1 = {1,2,3,4,5,0,0,0};
-    vector<int> nums2 = {2,2,3};
-    mergeSortedArrayWithoutExtraSpace(nums1, 5, nums2, 3);
+    string a="A man, a plan, a canal: Panama";
+    cout << validPalindrome(a);
 }

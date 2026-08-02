@@ -11,5 +11,6 @@ void removeDuplicates(vector<int>& nums);
 int firstOccurrence(string a, string b);
 int removeElement(string a);
 void mergeSortedArray(vector<int>& nums1, int m, vector<int>& nums2, int n);
+void mergeSortedArrayWithoutExtraSpace(vector<int>& nums1, int m, vector<int>& nums2, int n);
 
 #endif

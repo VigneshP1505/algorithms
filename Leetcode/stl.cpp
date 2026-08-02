@@ -1,10 +1,3 @@
-//
-//  stl.cpp
-//  Leetcode
-//
-//  Created by Vignesh Pugazhendhi on 2026-07-18.
-//
-
 #include <iostream>
 #include <unordered_map>
 #include <vector>

@@ -1,10 +1,3 @@
-//
-//  two_pointers.cpp
-//  Leetcode
-//
-//  Created by Vignesh Pugazhendhi on 2026-08-01.
-//
-
 #include<vector>
 #include<iostream>
 

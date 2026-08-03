@@ -170,3 +170,43 @@ int substrings(string s){
     }
     return res;
 }
+
+vector<int> distances(string s, char c){
+    vector<int> ioc;
+    int n = s.length();
+    vector<int> ans(n);
+    for (int i = 0; i < n; ++i) {
+        if (s[i] == c)
+            ioc.push_back(i);
+    }
+    int m = ioc.size();
+    int left = 0, right = 0;
+    
+    for (int i = 0; i < n; ++i) {
+        
+        if (i > ioc[right]) {
+            left = right;
+            if (right < m - 1)
+                ++right;
+        }
+        ans[i] = min(abs(ioc[right] - i), abs(ioc[left] - i));
+    }
+    return ans;
+}
+
+void flipInvert(vector<int>& v){
+    int left=0,right=v.size()-1;
+    while(left<=right){
+        int tmp=v[left]^1;
+        v[left]=v[right]^1;
+        v[right]=tmp;
+        left++;
+        right--;
+    }
+}
+
+void flipImage(vector<vector<int>>& image){
+    for(int i=0;i<image.size();i++){
+        flipInvert(image[i]);
+    }
+}

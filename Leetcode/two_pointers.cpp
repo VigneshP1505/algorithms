@@ -128,3 +128,45 @@ bool validPalindrome(string s) {
     }
     return true;
 }
+
+bool isValidPalindrome(string s,int left, int right){
+    while(left<right){
+        if(s[left]!=s[right]){
+            return false;
+        }
+        left++;
+        right--;
+    }
+    return true;
+}
+bool validPalindromeII(string s){
+    int left=0,right=static_cast<int>(s.length()-1);
+    while(left<right){
+        if(s[left]==s[right]){
+            left++;
+            right--;
+        }else{
+            return isValidPalindrome(s,left+1,right) || isValidPalindrome(s,left,right-1);
+        }
+    }
+    return true;
+}
+
+int substrings(string s){
+    if(s.length()==0 || s.length()==1)
+        return 0;
+    
+    int ctr=0,prev=0,res=0;
+    for(int i=1;i<s.length();++i){
+        if(s[i]==s[i-1]){
+            ctr++;
+        }else{
+            prev=ctr;
+            ctr=1;
+        }
+        if(ctr<=prev){
+            res++;
+        }
+    }
+    return res;
+}

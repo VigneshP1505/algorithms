@@ -1,4 +1,5 @@
 #include<vector>
+#include<stack>
 #include<iostream>
 
 using namespace std;
@@ -195,7 +196,7 @@ vector<int> distances(string s, char c){
 }
 
 void flipInvert(vector<int>& v){
-    int left=0,right=v.size()-1;
+    int left=0,right=static_cast<int>(v.size()-1);
     while(left<=right){
         int tmp=v[left]^1;
         v[left]=v[right]^1;
@@ -209,4 +210,53 @@ void flipImage(vector<vector<int>>& image){
     for(int i=0;i<image.size();i++){
         flipInvert(image[i]);
     }
+}
+
+string removeChars(string s){
+    stack<char> stack;
+    string result="";
+    for(char c:s){
+        if(c=='#' && stack.size()!=0)
+            stack.pop();
+        else
+            stack.push(c);
+    }
+    while(!stack.empty()){
+        result=result+stack.top();
+        stack.pop();
+    }
+    return result;
+}
+bool backspace(string s, string t){
+    return removeChars(s)==removeChars(t);
+}
+
+
+bool backspace_O1_Space(string s, string t){
+    int k=0,p=0;
+    for(int i=0;i<s.length();++i){
+        if(s[i]=='#'){
+            k--;
+            k=max(0,k);
+        } else{
+            s[k]=s[i];
+            k++;
+        }
+    }
+    for(int i=0;i<t.length();i++){
+        if(t[i]=='#'){
+            p--;
+            p=max(0,p);
+        }else{
+            t[p]=t[i];
+            p++;
+        }
+    }
+    if(k!=p)
+        return false;
+    for(int i=0;i<k;i++){
+        if(s[i]!=t[i])
+            return false;
+    }
+    return true;
 }

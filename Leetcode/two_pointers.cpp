@@ -270,3 +270,30 @@ vector<int> sortArrayByParity(vector<int>& nums){
     }
     return nums;
 }
+
+string reverseOnlyLetters(string s){
+    int p1 = 0;
+    int p2 = s.length() - 1;
+    while (p1 < p2) {
+        if (isalpha(s[p1]) && isalpha(s[p2])) {
+            swap(s[p1], s[p2]);
+            p1++;
+            p2--;
+        } else if (!isalpha(s[p1])) {
+            p1++;
+        } else {
+            p2--;
+        }
+    }
+    return s;
+}
+
+bool longPressedName(string name, string typed){
+    int i = 0, m = name.length(), n = typed.length();
+      for (int j = 0; j < n; ++j)
+          if (i < m && name[i] == typed[j])
+              ++i;
+          else if (!j || typed[j] != typed[j - 1])
+              return false;
+      return i == m;
+}

@@ -18,5 +18,6 @@ int substrings(string s);
 vector<int> distances(string s, char c);
 void flipImage(vector<vector<int>>& image);
 void backspace_O1_Space(string s, string t);
+bool longPressedName(string name, string typed);
 
 #endif
